@@ -105,7 +105,7 @@ extern "C" fn new(class: &Class, _: Sel) -> id {
     *(*this).get_mut_ivar(AUX_DELEGATE_STATE_NAME) =
       Box::into_raw(Box::new(RefCell::new(AuxDelegateState {
         activation_policy: ActivationPolicy::Regular,
-        activate_ignoring_other_apps: true,
+        activate_ignoring_other_apps: false,
         dock_visibility: true,
         last_dock_show: Mutex::new(None),
       }))) as *mut c_void;
